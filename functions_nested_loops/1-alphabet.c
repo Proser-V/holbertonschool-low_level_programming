@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * Return: 0 On success.
+ * print_alphabet - Entry point
+ * Return: no return
  */
 void print_alphabet(void)
 {
@@ -14,5 +14,4 @@ void print_alphabet(void)
 		_putchar(ch);
 	}
 	_putchar('\n');
-	return;
 }

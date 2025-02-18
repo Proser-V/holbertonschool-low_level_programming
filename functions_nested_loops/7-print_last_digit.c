@@ -3,7 +3,7 @@
 /**
  * print_last_digit - Entry point
  * @n: a number entry
- * Return: absolute n value
+ * Return: the last digit
  */
 
 int print_last_digit(int n)
@@ -11,6 +11,7 @@ int print_last_digit(int n)
 	int x;
 
 	x = n % 10;
+	_putchar(x);
 
 	return (x);
 }

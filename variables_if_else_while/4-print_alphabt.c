@@ -14,11 +14,11 @@ int main(void)
 	{
 		if (ch == 'q')
 		{
-		ch++;
+		continue;
 		}
 		else if (ch == 'e')
 		{
-		ch++;
+		continue;
 		}
 		else
 		{

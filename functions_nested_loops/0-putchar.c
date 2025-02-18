@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
  * main - Entry point
- * * Return: 0 On success.
+ * Return: 0 On success.
  */
 int main(void)
 {

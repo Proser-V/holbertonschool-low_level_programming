@@ -16,7 +16,7 @@ int main(void)
 	{
 		for (l = f + 1; l < 10; l++)
 		{
-			putchar(f +'0');
+			putchar(f + '0');
 			putchar(l + '0');
 			if (f != 8 || l != 9)
 			{

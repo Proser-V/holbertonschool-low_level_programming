@@ -13,9 +13,9 @@ int main(void)
 	int m = 0; /* middle digit */
 	int l = 0; /* last digit */
 
-	for (l = 0; m < 9; f++)
+	for (f = 0; f < 9; f++)
 	{
-		for (m = f + 1; f < 10; m++)
+		for (m = f + 1; m < 10; m++)
 		{
 			for (l = m + 1; l < 10; l++)
 			{

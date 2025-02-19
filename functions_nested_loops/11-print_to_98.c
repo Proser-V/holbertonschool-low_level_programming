@@ -19,9 +19,7 @@ void print_to_98(int n)
 		{
 			n--;
 		}
-			_putchar(n + '0');
-			_putchar(',');
-			_putchar(' ');
+			printf("%d, ", n);
 	}
 		_putchar('\n');
 }

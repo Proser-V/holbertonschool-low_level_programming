@@ -16,17 +16,17 @@ int main(void)
 	{
 		for (s = f + 1; s < 100; s++)
 		{
-					putchar((f / 10) + '0');
-					putchar((f % 10) + '0');
-					putchar(' ');
-					putchar((s / 10) + '0');
-					putchar((s % 10) + '0');
+			putchar((f / 10) + '0');
+			putchar((f % 10) + '0');
+			putchar(' ');
+			putchar((s / 10) + '0');
+			putchar((s % 10) + '0');
 
-					if (f != 98 || s != 99)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+			if (f != 98 || s != 99)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	putchar('\n');

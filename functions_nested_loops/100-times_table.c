@@ -37,20 +37,20 @@ void print_number(int num)
 
 void print_times_table(int n)
 {
-	int row;
-	int col;
+	int l;
+	int c;
 	int result;
 
 	if (n > 15 || n < 0)
 		return;
 
-	for (row = 0; row <= n; row++)
+	for (l = 0; l <= n; l++)
 	{
-		for (col = 0; col <= n; col++)
+		for (c = 0; c <= n; c++)
 		{
-			result = row * col;
+			result = c * l;
 
-			if (col == 0)
+			if (c == 0)
 				_putchar('0' + result);
 			else
 			{

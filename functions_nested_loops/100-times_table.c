@@ -1,55 +1,62 @@
 #include "main.h"
 
 /**
- * times_table - print n times tables
- * @n: the choosen time table
- * Return: nothing
+ * print_number - Helper function for Betty
+ * @num: The number to print
+ */
+
+void print_number(int num)
+{
+	if (num < 10)
+	{
+		_putchar(' ');
+		_putchar(' ');
+		_putchar('0' + num);
+	}
+	else if (num < 100)
+	{
+		_putchar(' ');
+		_putchar('0' + (num / 10));
+		_putchar('0' + (num % 10));
+	}
+	else
+	{
+		_putchar('0' + (num / 100));
+		_putchar('0' + (num / 10) % 10);
+		_putchar('0' + (num % 10));
+	}
+}
+
+/**
+ * print_times_table - print n times table
+ * Description: This function will print n times table
+ * starting with 0
+ * @n: number of times table
+ * Return: int times table
  */
 
 void print_times_table(int n)
 {
-	int i = 0;
-	int table = 0;
-	int result = 0;
-	int last_digit = 0;
-	int first_digit = 0;
-	int second_digit = 0;
+	int row;
+	int col;
+	int result;
 
-	for (; i < 100; i++)
+	if (n > 15 || n < 0)
+		return;
+
+	for (row = 0; row <= n; row++)
 	{
-		for (table = 0; table < 100; table++)
+		for (col = 0; col <= n; col++)
 		{
-			result = i * table;
-			if (result > 9)
-			{
-				first_digit = result / 10;
-				last_digit = result % 10;
-				_putchar('0' + first_digit);
-				_putchar('0' + last_digit);
-			}
-			else if (result > 99)
-			{
-				first_digit = result / 100;
-				last_digit = result % 10;
-				second_digit = result / 10;
-				_putchar('0' + first_digit);
-				_putchar('0' + second_digit);
-				_putchar('0' + last_digit);
-			}
-			else
-			{
-				if (table != 0)
-				{
-					_putchar(' ');
-				}
+			result = row * col;
 
+			if (col == 0)
 				_putchar('0' + result);
-			}
-
-			if (table != n)
+			else
 			{
 				_putchar(',');
 				_putchar(' ');
+				print_number(result);
 			}
 		}
 		_putchar('\n');

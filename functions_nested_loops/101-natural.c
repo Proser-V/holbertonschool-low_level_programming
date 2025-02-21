@@ -5,7 +5,7 @@
  * @num: The number to print
  */
 
-void main(void)
+int main(void)
 {
     int nat_numb, mult_three, mult_five, tot;
 

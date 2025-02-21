@@ -22,6 +22,7 @@ int main(void)
 	numb = numb2;
 	numb2 = numb3;
 	}
+	printf("\n");
 
 	return (0);
 }

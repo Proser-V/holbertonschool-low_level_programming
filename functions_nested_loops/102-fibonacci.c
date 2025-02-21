@@ -20,7 +20,7 @@ int main(void)
 	numb3 = numb + numb2;
 	printf("%lu, ", numb3);
 	numb = numb2;
-	numb = numb3;
+	numb2 = numb3;
 	}
 
 	return (0);

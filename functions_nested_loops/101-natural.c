@@ -24,6 +24,6 @@ int main(void)
 		}
 	nat_numb++;
 	}
-	printf("La somme est : %d\n", tot);
+	printf("%d\n", tot);
 	return (0);
 }

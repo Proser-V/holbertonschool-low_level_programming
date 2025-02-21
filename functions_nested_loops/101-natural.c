@@ -7,28 +7,21 @@
 
 void main(void)
 {
-	int nat_numb, mult_three, mult_five, somme;
-	int array[];
-	int size = sizeof(array);
+    int nat_numb, mult_three, mult_five, tot;
 
-	mult_three = nat_numb % 3;
-	mult_five = nat_numb % 5;
+  nat_numb = 0;
+  tot = 0;
 
-	while (nat_numb < 1024)	
-	{
-		if (mult_five = 0 || mult_three = 0)
-		{
-		printf("%d\n", array[i])
-		}
-		else
-		{
-		continue;
-		}
-	}
-	somme = 0;
-	for (int i = 0; i < size; i++)
-	{
-		somme += array[i];
-	}
-	printf("La somme est : %d\n", somme)
+    while (nat_numb < 1024)    
+    {
+    mult_three = nat_numb % 3;
+    mult_five = nat_numb % 5;
+    
+        if (mult_five == 0 || mult_three == 0)
+        {
+        tot += nat_numb;
+        }
+    nat_numb++;
+    }
+    printf("La somme est : %d\n", tot);
 }

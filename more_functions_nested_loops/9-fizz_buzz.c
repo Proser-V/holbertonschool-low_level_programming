@@ -17,17 +17,21 @@ int main(void)
 	mult_three = nat_numb % 3;
 	mult_five = nat_numb % 5;
 
-		if (mult_three == 0)
+		if (mult_three == 0 && mult_five != 0)
 		{
-		printf("Fizz");
+		printf("Fizz ");
 		}
-		if (mult_five == 0)
+		if (mult_five == 0 && mult_three != 0)
 		{
-		printf("Buzz");
+		printf("Buzz ");
+		}
+		if (mult_three == 0 && mult_five == 0)
+		{
+		printf("BuzzFizz ")
 		}
 		else
 		{
-		printf("%d\n", nat_numb);
+		printf("%d ", nat_numb);
 		}
 	nat_numb++;
 	}

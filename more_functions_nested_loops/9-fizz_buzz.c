@@ -27,7 +27,7 @@ int main(void)
 		}
 		if (mult_three == 0 && mult_five == 0)
 		{
-		printf("BuzzFizz ")
+		printf("BuzzFizz ");
 		}
 		else
 		{

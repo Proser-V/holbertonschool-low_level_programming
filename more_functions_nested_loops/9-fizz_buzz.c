@@ -21,7 +21,7 @@ int main(void)
 		{
 		printf("FizzBuzz ");
 		}
-		else if (nat_numb == 100)
+		else if (nat_numb == 100);
 		{
 		printf("Buzz\n")
 		}

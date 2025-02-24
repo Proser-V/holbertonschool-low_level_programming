@@ -38,6 +38,6 @@ int main(void)
 		printf("%d ", nat_numb);
 		}
 	}
-	
+
 	return (0);
 }

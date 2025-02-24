@@ -21,6 +21,10 @@ int main(void)
 		{
 		printf("FizzBuzz ");
 		}
+		else if (nat_numb == 100)
+		{
+		printf("Buzz\n")
+		}
 		else if (mult_five == 0 && mult_three != 0)
 		{
 		printf("Buzz ");
@@ -34,5 +38,6 @@ int main(void)
 		printf("%d ", nat_numb);
 		}
 	}
+	
 	return (0);
 }

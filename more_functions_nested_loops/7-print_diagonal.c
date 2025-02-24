@@ -22,13 +22,13 @@ void print_diagonal(int n)
 	{
 		for (a = 0; a != n; a++)
 		{
-			if (a == 0)
+			if (a != 0)
 			{
 			continue;
 			}
 			else
 			{
-				while (s < n)
+				while (s < a)
 				{
 				_putchar(' ');
 				s++;

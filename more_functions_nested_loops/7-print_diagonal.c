@@ -24,10 +24,6 @@ void print_diagonal(int n)
 		{
 			if (a != 0)
 			{
-			continue;
-			}
-			else
-			{
 				while (s < a)
 				{
 				_putchar(' ');

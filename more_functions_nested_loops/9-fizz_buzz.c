@@ -12,7 +12,7 @@ int main(void)
 
 	nat_numb = 0;
 
-	while (nat_numb <= 100)
+	while (nat_numb < 100)
 	{
 	mult_three = nat_numb % 3;
 	mult_five = nat_numb % 5;

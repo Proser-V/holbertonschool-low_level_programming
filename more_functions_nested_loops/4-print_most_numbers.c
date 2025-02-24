@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_numbers - print some digits
+ * print_most_numbers - print some digits with exeptions
  *
  * Return: nothing
  */

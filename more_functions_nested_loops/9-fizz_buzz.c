@@ -12,7 +12,7 @@ int main(void)
 
 	nat_numb = 1;
 
-	for (nat_numb = 1; nat_numb < 100; nat_numb++)
+	for (nat_numb = 1; nat_numb <= 100; nat_numb++)
 	{
 	mult_three = nat_numb % 3;
 	mult_five = nat_numb % 5;

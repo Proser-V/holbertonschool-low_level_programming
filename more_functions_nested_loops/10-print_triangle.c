@@ -9,10 +9,9 @@
 void print_triangle(int size)
 {
 	int a;
-	int s;
+	int l;
 
 	a = 0;
-	s = 0;
 
 	if (size <= 0)
 	{
@@ -20,19 +19,15 @@ void print_triangle(int size)
 	}
 	else
 	{
-		for (a = 0; a != size; a++)
+		for (a = 0; a < size; a++)
 		{
-			if (s < a)
+		l = 0;
+			while (l < (size - a))
 			{
-				_putchar(' ');
-				s++;
+			_putchar(' ');
 			}
-			else
-			{
-				_putchar('#');
-			}
+		_putchar('#');	
 		_putchar('\n');
-		s = 0;
 		}
 	}
 }

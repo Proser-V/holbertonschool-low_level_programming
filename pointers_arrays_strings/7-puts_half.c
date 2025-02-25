@@ -21,10 +21,8 @@ void puts_half(char *str)
 	{
 		_putchar(str[i]);
 	}
-		if ((len % 2) != 0)
-		{
-		_putchar(n);
-		}
-
-	_putchar('\n');
+	if ((len % 2) != 0)
+	{
+	_putchar(n);
+	}
 }

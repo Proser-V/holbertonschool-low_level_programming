@@ -10,27 +10,16 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	unsigned int count1 = 0;
-	unsigned int count2 = 0;
+	int i = 0;
+	int c1 = 0;
 
-	while (s1[count1] != '\0')
+	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
 	{
-		count1++;
+		if (s1[i] != s2 [i])
+		{
+			c1 = (s1[i] - s2[i]);
+			return (c1);
+		}
 	}
-	while (s2[count2] != '\0')
-	{
-		count2++;
-	}
-	if (count1 > count2)
-	{
-		return (count2 - count1);
-	}
-	else if (count1 < count2)
-	{
-		return ((count1 - count2) * -1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

@@ -1,21 +1,21 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
- * main - entry point
+ * check - check conditions for main
  * @argc: number of arguments
  * @argv: array containing the arguments
+ * @j : the integer value of agrv[1]
  * Return: 0 on success, 1 on Error
  */
 
-int main(int argc, char **argv)
+int check(int argc, char **argv, int j)
 {
-	int j = atoi(argv[1]);
-	int remains = j;
-	int count = 0;
-	int result = 0;
+	int i, k;
+
+	j = atoi(argv[1]);
 
 	if (argc != 2)
 	{
@@ -26,6 +26,36 @@ int main(int argc, char **argv)
 	{
 		printf("0\n");
 	}
+	for (i = 1; i < argc; i++)
+	{
+		for (k = 0; argv[i][k] != '\0'; k++)
+		{
+			if (isdigit(argv[i][k]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+	}
+	return (0);
+}
+
+/**
+ * main - entry point
+ * @argc: number of arguments
+ * @argv: array containing the arguments
+ * Return: 0 on success
+ */
+
+int main(int argc, char **argv)
+{
+	int j = atoi(argv[1]);
+	int remains = j;
+	int count = 0;
+	int result = 0;
+
+	(void)argc;
+
 	while (remains >= 25)
 	{
 		result = remains - 25;

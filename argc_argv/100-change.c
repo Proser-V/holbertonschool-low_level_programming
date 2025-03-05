@@ -13,7 +13,7 @@
 int main(int argc, char **argv)
 {
 	int j = atoi(argv[1]);
-	int remains = 0;
+	int remains = j;
 	int count = 0;
 	int result = 0;
 
@@ -53,6 +53,7 @@ int main(int argc, char **argv)
 	while (remains == 1)
 	{
 		count++;
+		remains--;
 	}
 	printf("%d\n", count);
 	return (0);

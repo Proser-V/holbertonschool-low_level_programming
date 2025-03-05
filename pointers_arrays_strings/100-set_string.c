@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * print_number - prints an integer
- * @n: the integer to print
- * Return: nothing
+ * set_string - sets the value of a pointer to a char
+ * @s: The pointer
+ * @to: The char
+ * Return: void
  */
 
 void set_string(char **s, char *to)

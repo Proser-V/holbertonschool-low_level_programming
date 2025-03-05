@@ -15,6 +15,7 @@ int main(int argc, char **argv)
 	int j = atoi(argv[1]);
 	int remains = 0;
 	int count = 0;
+	int result = 0;
 
 	if (argc != 2)
 	{
@@ -25,34 +26,34 @@ int main(int argc, char **argv)
 	{
 		printf("0\n");
 	}
-	if (j >= 25)
+	while (remains >= 25)
 	{
-		remains = j - 25;
+		result = remains - 25;
+		remains = result;
 		count++;
 	}
-	else if (j < 25 && j >= 10)
+	while (remains < 25 && remains >= 10)
 	{
-		remains = j - 10;
+		result = remains - 10;
+		remains = result;
 		count++;
 	}
-	else if (j < 10 && j >= 5)
+	while (remains < 10 && remains >= 5)
 	{
-		remains = j - 5;
+		result = remains - 5;
+		remains = result;
 		count++;
 	}
-	else if (j < 5 && j >= 2)
+	while (remains < 5 && remains >= 2)
 	{
-		remains = j - 2;
+		result = remains - 2;
+		remains = result;
 		count++;
 	}
-	else if (j < 2 && j >= 1)
+	while (remains == 1)
 	{
-		remains = j - 1;
 		count++;
 	}
-	else if (remains == 0)
-	{
 	printf("%d\n", count);
-	}
 	return (0);
 }

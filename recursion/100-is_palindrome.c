@@ -23,7 +23,7 @@ int _check_recursion(char *s, int start, int end)
 }
 
 /**
- * _strlen_recursion - Helper function to calculate the length of a string recursively
+ * _strlen_recursion - Helper function to calculate the length of a string
  * @s: String to calculate the length of
  * Return: Length of the string
  */

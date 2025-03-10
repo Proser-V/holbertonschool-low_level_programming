@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _str_concat - concatenate 2 strings in a new allocated space memory
+ * str_concat - concatenate 2 strings in a new allocated space memory
  * @s1: first target string
  * @s2: second target string
  * Return: a pointer to the concatenated string, or NULL if fail

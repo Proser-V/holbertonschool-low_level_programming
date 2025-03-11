@@ -34,9 +34,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	name_cpy = malloc(name_lenght + 1);
-	owner_cpy = malloc(own_lenght + 1);
-	if (name_cpy == NULL || owner_cpy == NULL)
+	if (name_cpy == NULL)
 	{
+		free(puppie);
+		return (NULL);
+	}
+	owner_cpy = malloc(own_lenght + 1);
+	if (owner_cpy == NULL)
+	{
+		free(puppie->name);
+		free(puppie);
 		return (NULL);
 	}
 

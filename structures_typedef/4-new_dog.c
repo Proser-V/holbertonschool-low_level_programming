@@ -1,6 +1,42 @@
 #include "dog.h"
 
 /**
+ * _strlen - found the lenght of a string
+ * @str: target string
+ * Return: the lenght of the string
+ */
+
+int _strlen(char *str)
+{
+	int len = 0;
+
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
+
+/**
+ * _strcpy - copy a string
+ * @src: source string
+ * @dest: destination string
+ * Return: nothing (void)
+ */
+
+void _strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
+
+/**
  * new_dog - create a new dog
  * @name: name of the dog
  * @age: age of the dog
@@ -10,50 +46,31 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int name_lenght, own_lenght;
-	int index;
-	char *name_cpy, *owner_cpy;
-
 	dog_t *puppie = ((dog_t *)malloc(sizeof(dog_t)));
 
 	if (puppie == NULL)
 	{
 		return (NULL);
 	}
-
-	puppie->name = name;
-	puppie->age = age;
-	puppie->owner = owner;
-
-	for (name_lenght = 0; puppie->name[name_lenght] != '\0'; name_lenght++)
-	{
-	}
-
-	for (own_lenght = 0; puppie->owner[own_lenght] != '\0'; own_lenght++)
-	{
-	}
-
-	name_cpy = malloc(name_lenght + 1);
-	if (name_cpy == NULL)
+	puppie->name = (char *)malloc(_strlen(name) + 1);
+	if (puppie->name == NULL)
 	{
 		free(puppie);
 		return (NULL);
 	}
-	owner_cpy = malloc(own_lenght + 1);
-	if (owner_cpy == NULL)
+	_strcpy(puppie->name, name);
+
+	puppie->owner = (char *)malloc((_strlen(owner) + 1) * sizeof(char));
+	if (puppie->owner == NULL)
 	{
 		free(puppie->name);
 		free(puppie);
 		return (NULL);
 	}
 
-	for (index = 0; index < name_lenght; index++)
-	{
-		name_cpy[index] = puppie->name[index];
-	}
-	for (index = 0; index < own_lenght; index++)
-	{
-		owner_cpy[index] = puppie->owner[index];
-	}
+	_strcpy(puppie->owner, owner);
+
+	puppie->age = age;
+
 	return (puppie);
 }

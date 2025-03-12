@@ -93,7 +93,6 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	/* Allocate memory for the word array */
 	n_str = malloc((word_counter(str) + 1) * sizeof(char *));
 	if (n_str == NULL)
 		return (NULL);

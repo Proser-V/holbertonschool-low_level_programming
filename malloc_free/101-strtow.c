@@ -90,7 +90,8 @@ char **strtow(char *str)
 		{
 			lenght++;
 		}
-
+		if (lenght > 0)
+		{
 		n_str[index] = malloc((lenght + 1) * sizeof(char));
 		if (n_str[index] == NULL)
 		{
@@ -105,8 +106,8 @@ char **strtow(char *str)
 		copy_word(n_str[index], str, lenght);
 		index++;
 		str += lenght;
+		}
 	}
-
 	n_str[index] = NULL;
 	return (n_str);
 }

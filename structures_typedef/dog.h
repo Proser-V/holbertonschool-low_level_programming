@@ -2,6 +2,13 @@
 #define DOG
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+ * struct dog - A simple dog
+ * @name: The name of the dog
+ * @owner: The owner of the dog
+ * @age: The age of the dog
+ */
 typedef struct dog
 {
 	char *name;

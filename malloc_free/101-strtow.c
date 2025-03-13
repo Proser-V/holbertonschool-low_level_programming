@@ -59,8 +59,18 @@ void copy_word(char *dest, char *src, int lenght)
 
 char *skip_spaces(char *str)
 {
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 	while (*str == ' ')
+	{
 		str++;
+	}
+	if (*str == '\0')
+	{
+		return (NULL);
+	}
 	return (str);
 }
 

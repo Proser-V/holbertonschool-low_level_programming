@@ -90,9 +90,12 @@ int extract_word(char *str)
 char **strtow(char *str)
 {
 	char **n_str;
-	int index = 0, index2 = 0, length = 0;
+	int index = 0, index2 = 0, length = 0, word_count = 0;
 
 	if (str == NULL || *str == '\0')
+		return (NULL);
+	word_count = word_counter(str);
+	if (word_count == 0)
 		return (NULL);
 
 	n_str = malloc((word_counter(str) + 1) * sizeof(char *));

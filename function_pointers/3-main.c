@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if (strlen(argv[2]) != 1 || !strchr("+-*/%", argv[2][0]))
+	if (strlen(argv[2]) != 1 || !strchr("+-*/%", argv[2][0]) || ope == NULL)
 	{
 		printf("Error\n");
 		exit(99);
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	if ((*argv[2] == '/' && b == '0') || (*argv[2] == '%' && b == '0'))
+	if ((*argv[2] == '/' && b == 0) || (*argv[2] == '%' && b == 0))
 	{
 		printf("Error\n");
 		exit(100);

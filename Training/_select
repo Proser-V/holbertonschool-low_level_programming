@@ -1,0 +1,61 @@
+#include "holberton.h"
+
+/**
+ * _strcmp - Compare 2 strings
+ *
+ * Description: A function helper to compare two strings together.
+ *              This is a rewrite of the strcmp function.
+ *
+ * @str1: The first string
+ * @str2: The second string
+ *
+ * Return: 0 if similar, positive number if str1 greater than str2
+ * negative if s2 greater than s1
+ */
+
+int _strcmp(char *str1, char *str2) /* Maybe use unsigned char ? */
+{
+	int index = 0;
+	int comp = 0;
+
+	for (index = 0; str1[index] != '\0' && str2[index] != '\0'; index++)
+	{
+		if (str1[index] != str2[index])
+		{
+			comp = (str1[index] - str2[index]);
+			return (comp);
+		}
+	}
+	return (0);
+}
+/**
+ * select - Selects the function to perform for the conversion specifier
+ *          passed to _printf.
+ *
+ * Description: For each conversion specifier passed to _printf, this function
+ *              select the function to use to print the correct output.
+ *
+ * @spec: A string containing the flag for the conversion specifier.
+ *
+ * Return: A pointer to the function to call.
+ */
+
+int (*select(char *spec))(va_list)
+{
+	conversion_specifier selector[] = {
+		{"c", _print_char},
+		{"s", _print_string},
+		{NULL, NULL}
+	};
+	int index = 0;
+
+	while (selector[index].specifier != NULL)
+	{
+		if (_strcmp(selector[index].specifier, spec) == 0)
+		{
+			return (selector[index].func);
+		}
+		index++;
+	}
+	return (NULL);
+}

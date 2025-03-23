@@ -27,7 +27,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arguments; /* Macro initializing argument list */
-	int index, index2, bytes_count = 0;
+	int index, bytes_count = 0;
 
 	va_start(arguments, format); /* Macro initializing argument list iteration */
 	for (index = 0; format[index] != '\0'; index++)
@@ -36,40 +36,27 @@ int _printf(const char *format, ...)
 		{
 			write(1, &format[index], 1); /* Write regular character */
 			bytes_count++;
+			continue; /* Go back to the loop to check the next character */
 		}
-		if (format[index] == '%') /* Handle conversion specifiers */
+		index++; /* Checking the next character after "%" */
+		if (format[index] == 'c')
 		{
-			index++;
-			if (format[index] == 'c')
-			{
-				char character = va_arg(arguments, int);
-
-				write(1, &character, 1); /* Write %c character */
-				bytes_count++;
-			}
-			else if (format[index] == 's')
-			{
-				char *str = (va_arg(arguments, char *));
-
-				if (str == NULL)
-					str = "(null)";
-				for (index2 = 0; str[index2] != '\0'; index2++)
-				{
-					write(1, &str[index2], 1); /* Write %s string */
-					bytes_count++;
-				}
-			}
-			else if (format[index] == '%')
-			{
-				write(1, "%", 1); /* Write "%" */
-				bytes_count++;
-			}
-			else
-			{ /* Handeling other conversion specifier */
-				write(1, "%", 1);
-				write(1, &format[index], 1);
-				bytes_count += 2;
-			}
+			bytes_count += _print_char(arguments);
+		}
+		else if (format[index] == 's')
+		{
+			bytes_count += _print_string(arguments);
+		}
+		else if (format[index] == '%')
+		{
+			write(1, "%", 1); /* Write "%" */
+			bytes_count++;
+		}
+		else
+		{ /* Handeling other conversion specifier */
+			write(1, "%", 1);
+			write(1, &format[index], 1);
+			bytes_count += 2;
 		}
 	}
 	va_end(arguments); /* Macro ending argument list iteration */

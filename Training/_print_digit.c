@@ -99,7 +99,7 @@ int _print_digit(va_list arguments)
 
 	number_str = rev_string(number_str, count); /* Reverse the string */
 
-	for (index = 0; index <= count; index++) /* Print the int as char */
+	for (index = 0; number_str[index] != '\0'; index++) /* Print the string */
 		write(1, &number_str[index], 1);
 
 	free(number_str);

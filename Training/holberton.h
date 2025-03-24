@@ -1,5 +1,5 @@
-#ifndef _CALC_H_
-#define _CALC_H_
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -25,7 +25,9 @@ typedef struct conv_spe
 } conversion_specifier;
 
 int _printf(const char *format, ...);
-int _print_string(va_list);
-int _print_char(va_list);
+int _print_string(va_list arguments);
+int _print_char(va_list arguments);
+int _print_digit(va_list arguments);
+int egde_check(int digit);
 
 #endif

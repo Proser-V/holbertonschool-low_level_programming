@@ -40,13 +40,14 @@ int _printf(const char *format, ...)
 		}
 		index++; /* Checking the next character after "%" */
 		if (format[index] == 'c')
-		{
 			bytes_count += _print_char(arguments);
-		}
+
 		else if (format[index] == 's')
-		{
 			bytes_count += _print_string(arguments);
-		}
+
+		else if (format[index] == 'd' || format[index] == 'i')
+		bytes_count += _print_digit(arguments);
+
 		else if (format[index] == '%')
 		{
 			write(1, "%", 1); /* Write "%" */

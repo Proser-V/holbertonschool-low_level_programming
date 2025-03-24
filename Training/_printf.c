@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 			bytes_count += _print_string(arguments);
 
 		else if (format[index] == 'd' || format[index] == 'i')
-		bytes_count += _print_digit(arguments);
+			bytes_count += _print_digit(arguments);
 
 		else if (format[index] == '%')
 		{

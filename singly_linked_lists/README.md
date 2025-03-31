@@ -1,0 +1,1 @@
+First approach of singly linked list

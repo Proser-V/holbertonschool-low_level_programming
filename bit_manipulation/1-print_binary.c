@@ -10,7 +10,7 @@
 
 void print_binary(unsigned long int n)
 {
-	int index;
+	int ok;
 	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
 
 	if (n == 0)
@@ -19,14 +19,14 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while (mask)
+	while (mask > 0)
 	{
-		if (n & mask)
+		if (n & mask) /* Check if the current bit is set (1) */
 		{
 			_putchar('1');
-			index = 1;
+			ok = 1;
 		}
-		else if (index)
+		else if (ok == 1) /* If printing has started and the bit is 0, print '0' */
 		{
 			_putchar('0');
 		}

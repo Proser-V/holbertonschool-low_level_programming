@@ -11,7 +11,7 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	ssize_t file, len, bytesWrite;
+	ssize_t file, len = 0, bytesWrite;
 
 	if (filename == NULL)
 		return (-1);
@@ -21,7 +21,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		while (text_content[len] != '\0')
 			len++;
 	}
-	file = open(filename, O_CREAT | O_APPEND);
+	file = open(filename, O_APPEND | O_WRONLY);
 	if (file == -1)
 		return (-1);
 

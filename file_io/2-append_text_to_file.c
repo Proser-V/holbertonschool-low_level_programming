@@ -27,16 +27,14 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		close(file);
-		return (1);
+		bytesWrite = write(file, text_content, len);
+		if (bytesWrite == -1)
+		{
+			close(file);
+			return (-1);
+		}
 	}
-	bytesWrite = write(file, text_content, len);
 
-	if (bytesWrite == -1)
-	{
-		close(file);
-		return (-1);
-	}
 	close(file);
 	return (1);
 }
